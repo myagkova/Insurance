@@ -1,0 +1,35 @@
+﻿Check unprofitableness
+
+
+
+POST/prediction		Request
+
+          				{
+							“Age”:  20,
+							“Driving_experience”: 1,
+							“Salary”: 100000
+						}
+               
+
+						Response
+						
+						{
+							“unprofitableness”: {
+								“mean”: 319,
+								“std”: 187,
+								“min”:  92,
+								“25%”: 153,
+								“50%”: 257,
+								“75%”: 470,
+								“max”: 700
+							}
+						}						
+		
+						
+
+
+
+
+
+
+

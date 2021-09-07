@@ -8,7 +8,7 @@ from django.http import JsonResponse
 
 
 class Prediction(APIView):
-    def post(self, request):
+    def get(self, request):
         data = request.data
         age = data['Age']
         driving_experience = data['Driving_experience']
@@ -17,7 +17,7 @@ class Prediction(APIView):
         model = ApiConfig.model
         predicted = model.predict([[age, driving_experience, salary]])
         predicted = np.round(predicted, 1)
-        with open('ml/data/cluster_0.json') as json_file:
+        with open('ml/data/clusters_data.json') as json_file:
             cluster_1, cluster_2, cluster_3, cluster_4 = zip(*[line.rstrip().split(';') for line in json_file])
         if predicted == 0:
             return JsonResponse('\n'.join(cluster_1), safe=False)

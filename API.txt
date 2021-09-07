@@ -1,8 +1,8 @@
-﻿Check unprofitableness
+﻿Check cluster
 
 
 
-POST/prediction		Request
+GET/prediction		Request
 
           				{
 							“Age”:  20,
